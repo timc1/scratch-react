@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
@@ -29,6 +30,7 @@
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "typescript": "^3.2.2",
+    "typescript-eslint-parser": "^21.0.2",
     "url-loader": "^1.1.2",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
@@ -37,7 +39,9 @@
   },
   "sideEffects": false,
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "@types/node": "^10.12.18",
+    "@types/reach__router": "^1.2.2",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "react": "^16.8.0-alpha.0",
