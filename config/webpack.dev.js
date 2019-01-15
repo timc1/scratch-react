@@ -6,6 +6,7 @@ const webpack = require('webpack')
 module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
+    historyApiFallback: true,
     contentBase: path.resolve(__dirname, '../dist'),
     hot: true,
   },
