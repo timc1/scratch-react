@@ -1,11 +1,34 @@
 import './shared/style.scss'
 
 function component() {
-  let main = document.getElementsByTagName('main')[0]
+  let el = document.createElement('button')
+  el.innerText = 'click to lazy load'
+  el.addEventListener('click', e => {
+    import(/* webpackChunkName: 'printme' */ './components/some-component/index').then(
+      mod => {
+        const printMe = mod.default
 
-  const el = document.createElement('h1')
-  el.innerHTML = 'hi'
-  main.appendChild(el)
+        printMe().then(element => {
+          document.body.appendChild(element)
+        })
+      }
+    )
+  })
+
+  return el
 }
 
-component()
+if (process.env.NODE_ENV !== 'production') {
+  let element = component()
+  console.log(element)
+  document.body.appendChild(element)
+
+  if (module.hot) {
+    module.hot.accept('./components/some-component/index', function() {
+      console.log('Accepting the updated printMe module!')
+      document.body.removeChild(element)
+      element = component()
+      document.body.appendChild(element)
+    })
+  }
+}

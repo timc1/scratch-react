@@ -42,3 +42,5 @@ public
 
 *.swo
 *.swp
+
+dist
