@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'InterUI';
+  src: url('./fonts/Inter-UI-ExtraBold.woff2') format('woff2'),
+    url('./fonts/Inter-UI-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterUI';
+  src: url('./fonts/Inter-UI-Medium.woff2') format('woff2'),
+    url('./fonts/Inter-UI-Medium.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterUI';
+  src: url('./fonts/Inter-UI-Light.woff2') format('woff2'),
+    url('./fonts/Inter-UI-Light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+:root {
+  // Fonts
+  --bold: 800;
+  --regular: 400;
+  --light: 200;
+  --baseff: 'InterUI';
+
+  // Colors
+  --black: #000;
+}
+
+::selection {
+  background: var(--black);
+  color: #fff;
+}
+::-moz-selection {
+  background: var(--black);
+  color: #fff;
+}
+
+* {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: 'pnum';
+  font-feature-settings: 'pnum';
+  font-variant-numeric: proportional-nums;
+  font-family: InterUI;
+  box-sizing: border-box;
+}
+
+html {
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
