@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: './src/index.tsx',
   },
   plugins: [
     new CleanWebpackPlugin(['dist'], {
@@ -34,9 +34,29 @@ module.exports = {
       },
     },
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      {
+        test: /\.(js|tsx?)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true,
+          babelrc: false,
+          presets: [
+            ['@babel/preset-env', { targets: { browsers: 'last 2 versions' } }],
+            '@babel/preset-typescript',
+            '@babel/preset-react',
+          ],
+          plugins: [
+            'react-hot-loader/babel',
+            '@babel/plugin-syntax-dynamic-import',
+          ],
+        },
+      },
       {
         test: /\.(css|scss)$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
