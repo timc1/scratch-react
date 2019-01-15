@@ -1,13 +1,13 @@
 <h1 align="center">
-  Hot Vanilla Template 
+  Scratch React 
   <br>
 </h1>
-<p align="center" style="font-size: 1.2rem;">A simple, reusable hot reloaded HTML/CSS/JS project setup.</p>
+<p align="center" style="font-size: 1.2rem;">A simple, reusable hot reloaded, file minifying, React template.</p>
 
 ## Usage
 
 ```
-git clone git@github.com:timc1/yum-hot-vanilla.git
+git clone git@github.com:timc1/scratch-react.git
 ```
 
 ```
@@ -16,6 +16,10 @@ npm install
 
 ```
 npm start
+```
+
+```
+npm build
 ```
 
 - image minification with image-webpack-loader
